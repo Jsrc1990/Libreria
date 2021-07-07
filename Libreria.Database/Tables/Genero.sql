@@ -1,0 +1,5 @@
+﻿CREATE TABLE Genero
+(
+Id VARCHAR(32) DEFAULT sys_guid() PRIMARY KEY,
+Nombre VARCHAR(100)
+)

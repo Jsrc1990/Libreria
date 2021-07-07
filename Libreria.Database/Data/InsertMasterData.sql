@@ -1,0 +1,7 @@
+﻿INSERT INTO Ciudad VALUES (DEFAULT, 'Santa Marta');
+INSERT INTO Ciudad VALUES (DEFAULT, 'Barranquilla');
+INSERT INTO Ciudad VALUES (DEFAULT, 'Cartagena');
+
+INSERT INTO Genero VALUES (DEFAULT, 'Comedia');
+INSERT INTO Genero VALUES (DEFAULT, 'Terror');
+INSERT INTO Genero VALUES (DEFAULT, 'Infantil');

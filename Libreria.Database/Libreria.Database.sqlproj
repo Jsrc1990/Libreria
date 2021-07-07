@@ -56,5 +56,18 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="Tables" />
+    <Folder Include="Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\Autor.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\Ciudad.sql" />
+    <Build Include="Tables\Genero.sql" />
+    <Build Include="Tables\Libro.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Data\InsertMasterData.sql" />
   </ItemGroup>
 </Project>
