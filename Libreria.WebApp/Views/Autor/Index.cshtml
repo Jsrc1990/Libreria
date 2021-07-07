@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Libreria.Repository.AUTOR>
+
+@{
+    ViewBag.Title = "Index";
+}
+<h1>Autores</h1>
+
+
+
+@using (Html.BeginForm("Index", "Autor", FormMethod.Get))
+{
+    <input type="text" id="valor" name="valor" placeholder="Nombre del autor">
+    <input type="submit" value="Buscar" />
+}
+
+<p style="text-align:right;">
+    @Html.ActionLink("Crear nuevo Autor", "Create")
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                NOMBRE COMPLETO
+            </th>
+            <th>
+                FECHA DE NACIMIENTO
+            </th>
+            <th>
+                CIUDAD
+            </th>
+            <th>
+                CORREO ELECTRONICO
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NOMBRECOMPLETO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FECHANACIMIENTO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CIUDAD.NOMBRE)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CORREOELECTRONICO)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Detalles", "Details", new { id = item.ID }) |
+                        @Html.ActionLink("Editar", "Edit", new { id = item.ID }) |
+                        @Html.ActionLink("Eliminar", "Delete", new { id = item.ID })
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

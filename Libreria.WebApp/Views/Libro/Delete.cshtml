@@ -1,0 +1,65 @@
+﻿@model Libreria.Repository.LIBRO
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar libro</h2>
+
+<h3>Estás seguro de eliminar este libro?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TITULO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TITULO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AÑO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AÑO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GENERO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GENERO1.NOMBRE)
+        </dd>
+
+        <dt>
+            NÚMERO DE PAGINAS
+            @*@Html.DisplayNameFor(model => model.NUMEROPAGINAS)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NUMEROPAGINAS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AUTOR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AUTOR1.NOMBRECOMPLETO)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            @Html.ActionLink("Regresar", "Index") |
+            <input type="submit" value="Eliminar" class="btn btn-default" />
+        </div>
+    }
+</div>

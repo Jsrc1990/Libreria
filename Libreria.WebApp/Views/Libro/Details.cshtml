@@ -1,0 +1,59 @@
+﻿@model Libreria.Repository.LIBRO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles del Libro</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TITULO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TITULO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AÑO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AÑO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GENERO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GENERO1.NOMBRE)
+        </dd>
+
+        <dt>
+            NÚMERO DE PAGINAS
+            @*@Html.DisplayNameFor(model => model.NUMEROPAGINAS)*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NUMEROPAGINAS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AUTOR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AUTOR1.NOMBRECOMPLETO)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Regresar", "Index") |
+    @Html.ActionLink("Editar", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Eliminar", "Delete", new { id = Model.ID })
+</p>

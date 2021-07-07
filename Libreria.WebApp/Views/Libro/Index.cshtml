@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Libreria.Repository.LIBRO>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>LIBROS</h2>
+
+
+@using (Html.BeginForm("Index", "Libro", FormMethod.Get))
+{
+    <input type="text" id="valor" name="valor" placeholder="Título, Nombre del autor">
+    <input type="submit" value="Buscar" />
+}
+
+<p style="text-align:right;">
+    @Html.ActionLink("Crear nuevo Libro", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TITULO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AÑO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GENERO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NUMEROPAGINAS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AUTOR)
+        </th>
+        <th></th>
+    </tr>
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TITULO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AÑO)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GENERO1.NOMBRE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NUMEROPAGINAS)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AUTOR1.NOMBRECOMPLETO)
+                </td>
+                <td>
+                    @Html.ActionLink("Detalles", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Editar", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.ID })
+                </td>
+            </tr>
+        }
+    }
+</table>

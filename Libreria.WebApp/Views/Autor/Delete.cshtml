@@ -1,0 +1,56 @@
+﻿@model Libreria.Repository.AUTOR
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar Autor</h2>
+
+<h3>Estás seguro de eliminar este Autor?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            NOMBRE COMPLETO
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRECOMPLETO)
+        </dd>
+
+        <dt>
+            FECHA DE NACIMIENTO
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FECHANACIMIENTO)
+        </dd>
+
+        <dt>
+            CIUDAD
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CIUDAD.NOMBRE)
+        </dd>
+
+        <dt>
+            CORREO ELECTRONICO
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CORREOELECTRONICO)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            @Html.ActionLink("Regresar", "Index") |
+            <input type="submit" value="Eliminar" class="btn btn-default" />
+        </div>
+    }
+</div>
