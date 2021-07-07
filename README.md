@@ -67,6 +67,8 @@ en todas partes, sin embargo puede tener más clases esenciales para otros desar
   
 ## BACK:
   
+![image](https://user-images.githubusercontent.com/10767482/124770877-4ffe6c00-df00-11eb-98d5-8e9865092c9a.png)
+
 ![image](https://user-images.githubusercontent.com/10767482/124766163-470b9b80-defc-11eb-95a9-151bbb416f59.png)
 
 ![image](https://user-images.githubusercontent.com/10767482/124766323-702c2c00-defc-11eb-9a5b-e62eb33956b7.png)
